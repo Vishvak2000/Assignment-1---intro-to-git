@@ -64,9 +64,17 @@ public:
     Hand();
 
     // You decide what functions you'll need...
+    void print_hand();
+    double get_total();
+    void add_card(Card* p);
+     
 
 private:
     // You decide what fields you'll need...
+    vector<Card*> v;
+    double total;
+    
+
 };
 
 
@@ -74,13 +82,22 @@ class Player {
 public:
     // Constructor. 
     //    Assigns initial amount of money
-    Player(int m);
+    Player(string _name, int _money);
 
     // You decide what functions you'll need...
+    string get_name();
+    int get_money();
+    void lose_money(int value);
+    void add_money(int value);
+    int get_wins();
+    void addwin();
 
 private:
+    string name;
     int money;
     // You decide what extra fields (if any) you'll need...
+    int wins;
+    Hand* player_hand;
 };
 
 #endif#pragma once

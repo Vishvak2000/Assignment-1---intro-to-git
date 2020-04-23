@@ -110,13 +110,63 @@ string Card::get_spanish_rank() const {
 // Accessor: returns a string with the suit of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const {
-    return "";
+    string suitName;
+    switch (suit) {
+    case OROS:
+        suitName = "Hearts";
+        break;
+    case COPAS:
+        suitName = "Clubs";
+        break;
+    case ESPADAS:
+        suitName = "Spades";
+        break;
+    case BASTOS:
+        suitName = "Diamonds";
+        break;
+    default: break;
+    }
+    return suitName;
 }
 
 // Accessor: returns a string with the rank of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
-    return "";
+    std::string rankName;
+    switch (rank) {
+    case AS:
+        rankName = "Ace";
+        break;
+    case DOS:
+        rankName = "Two";
+        break;
+    case TRES:
+        rankName = "Three";
+        break;
+    case CUATRO:
+        rankName = "Four";
+        break;
+    case CINCO:
+        rankName = "Five";
+        break;
+    case SEIS:
+        rankName = "Six";
+        break;
+    case SIETE:
+        rankName = "Seven";
+        break;
+    case SOTA:
+        rankName = "King";
+        break;
+    case CABALLO:
+        rankName = "Queen";
+        break;
+    case REY:
+        rankName = "Jack";
+        break;
+    default: break;
+    }
+    return rankName;
 }
 
 
@@ -135,14 +185,47 @@ bool Card::operator < (Card card2) const {
 
 
 
+
 /* *************************************************
    Hand class
    ************************************************* */
    // Implemente the member functions of the Hand class here.
-
+void  Hand::print_hand() {
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i]->get_english_suit() << " of " << v[i]->get_english_rank() << endl;
+    }
+    cout << endl;
+}
+double Hand::get_total() {
+    return total;
+}
+void Hand::add_card(Card* p) {
+    v.push_back(p);
+}
+void Hand:
 
 
    /* *************************************************
       Player class
       ************************************************* */
       // Implemente the member functions of the Player class here.
+Player::Player(string _name, int _money): name(_name), money(_money) {}
+
+string Player::get_name() {
+    return name;
+}
+int Player::get_money() {
+    return money;
+}
+void Player::lose_money(int value) {
+    money -= value;
+}
+void Player::add_money(int value) {
+    money += value;
+}
+int Player::get_wins() {
+    return wins;
+}
+void Player::addwin() {
+    wins++;
+}

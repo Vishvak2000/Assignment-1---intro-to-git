@@ -12,12 +12,11 @@ using namespace std;
 
 // Non member functions declarations (if any)
 
-
 // Non member functions implementations (if any)
 
 
 // Stub for main
 int main() {
-    /* --STATEMENTS-- */
-    return 0;
+    Card B;
+    cout << A.get_english_rank() << "and" << A.get_english_suit() << "and" << A.get_rank();
 }
