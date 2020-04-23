@@ -202,7 +202,7 @@ double Hand::get_total() {
 void Hand::add_card(Card* p) {
     v.push_back(p);
 }
-void Hand:
+
 
 
    /* *************************************************
