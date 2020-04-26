@@ -190,6 +190,8 @@ bool Card::operator < (Card card2) const {
    Hand class
    ************************************************* */
    // Implemente the member functions of the Hand class here.
+
+
 void  Hand::print_hand() {
     for (int i = 0; i < v.size(); i++) {
         cout << v[i]->get_english_suit() << " of " << v[i]->get_english_rank() << endl;

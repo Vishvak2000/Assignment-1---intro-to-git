@@ -61,7 +61,7 @@ private:
 class Hand {
 public:
     // A vector of Cards
-    Hand();
+   
 
     // You decide what functions you'll need...
     void print_hand();
