@@ -83,9 +83,11 @@ public:
     // Constructor. 
     //    Assigns initial amount of money
     Player(string _name, int _money);
+    Player();
 
     // You decide what functions you'll need...
-    string get_name();
+    
+    Hand* get_hand();
     int get_money();
     void lose_money(int value);
     void add_money(int value);

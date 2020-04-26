@@ -191,12 +191,19 @@ bool Card::operator < (Card card2) const {
    ************************************************* */
    // Implemente the member functions of the Hand class here.
 void  Hand::print_hand() {
+    if (v.size() == 0) {
+        cout << "empty hand" << endl;
+    }
     for (int i = 0; i < v.size(); i++) {
         cout << v[i]->get_english_suit() << " of " << v[i]->get_english_rank() << endl;
     }
     cout << endl;
 }
 double Hand::get_total() {
+    double total = 0;
+    for (int i = 0; i < v.size(); i++) {
+        total += v[i]->get_rank();
+    }
     return total;
 }
 void Hand::add_card(Card* p) {
@@ -209,11 +216,13 @@ void Hand::add_card(Card* p) {
       Player class
       ************************************************* */
       // Implemente the member functions of the Player class here.
-Player::Player(string _name, int _money): name(_name), money(_money) {}
+Player::Player(string _name, int _money): name(_name), money(_money), player_hand(new Hand()), wins(0) {}
+Player::Player() : name("Dealer"), money(900), player_hand(new Hand()), wins(0){}
 
-string Player::get_name() {
-    return name;
+Hand* Player::get_hand() {
+    return player_hand;
 }
+
 int Player::get_money() {
     return money;
 }
