@@ -30,6 +30,15 @@ void print_info(Player* player, Player* dealer) {
 
 // Stub for main
 int main() {
-    Card B;
-    cout << A.get_english_rank() << "and" << A.get_english_suit() << "and" << A.get_rank();
+    Player D;
+    Player A(800);
+    for (int i = 0; i < 3; i++) {
+        Card* p = new Card;
+        D.get_hand()->add_card(p);
+    }
+    p = new Card;
+    A.get_hand()->add_card(p)
+    D.get_hand()->print_hand();
+   
+    print_info();
 }
