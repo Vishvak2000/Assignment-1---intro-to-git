@@ -39,6 +39,22 @@ void hand_info(Player* player, Player* dealer) {
     cout << "Your total: " << dealer->get_hand()->get_total() << endl << endl;
 
 }
+
+int check_win(Player* player, Player* Dealer) {
+    if (Dealer->get_hand()->get_total() >= 7.5) {
+        cout << "Player wins!" << endl;
+        return 2;
+        
+    }
+    else if (player->get_hand()->get_total() >= 7.5) {
+        cout << "Dealer wins!" << endl;
+        return 1;
+        
+    }
+    else {
+        return 3;
+    }
+}
 // Stub for main
 int main() {
     bool win = false;
@@ -49,20 +65,27 @@ int main() {
     cin >> bet;
     cout >> "__________________________________" << endl;
 
-    while (win = false;) {
+    while (win = false) {
         if (D.get_hand()->get_total() <= 5.5) {
-            cout >> "Dealer picks a card:"
+            cout >> "Dealer picks a card:" << endl;
                 Card * p = new Card;
             D.get_hand()->add_card(p);
         }
+        else {
+            cout << "Dealer doesn't pick a card" << endl;
+        }
         p = new Card;
-        cout >> "Pick a card (y/n)";
+        cout >> "Pick a card (y/n)" << endl;
         char ans;
         cin >> ans;
         if (ans == 'y') {
             A.get_hand()->add_card(p);
+        } else 
+        hand_info(A,D);
+        
+        if (check_win(A, D) == 1 || checkwin(A, D) == 2) {
+            win = true;
         }
-        hand_info();
     }
     
    
