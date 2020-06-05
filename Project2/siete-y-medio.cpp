@@ -32,12 +32,20 @@ void hand_info(Player* player, Player* dealer) {
     
     cout << "Your cards: " << endl;
     player->get_hand()->print_hand();
-    cout << "Your total: " << player->get_hand()->get_total() << endl << endl;
+    cout << "Total: " << player->get_hand()->get_total() << endl << endl;
 
     cout << "Dealer's cards: " << endl;
     dealer->get_hand()->print_hand();
-    cout << "Your total: " << dealer->get_hand()->get_total() << endl << endl;
+    cout << "Total: " << dealer->get_hand()->get_total() << endl << endl;
     cout << " -- - - - - - - - - - - - - --" << endl;
+
+}
+void hand_info(Player* player) {
+
+
+    cout << "Your cards: " << endl;
+    player->get_hand()->print_hand();
+    cout << "Total: " << player->get_hand()->get_total() << endl << endl;
 
 }
 
@@ -52,8 +60,9 @@ int check_win(Player* player, Player* Dealer) {
         return 1;
         
     }
-    else {
-        return 3;
+    else if ((player->get_hand()->get_total()) > (Dealer->get_hand()->get_total())) {
+        cout << "Player wins!" << endl;
+        return 2;
     }
 }
 // Stub for main
@@ -70,14 +79,14 @@ int main() {
 
     while (win == false) {
         Card* p = new Card;
-        if (dealer->get_hand()->get_total() <= 5.5) {
-            cout << "Dealer picks a card." << endl;
+        if (dealer->get_hand()->get_total() < 5.5) {
+           // cout << "Dealer picks a card." << endl;
                 
             dealer->get_hand()->add_card(p);
         }
-        else {
+       /* else {
             cout << "Dealer doesn't pick a card" << endl;
-        }
+        } */
         p = new Card;
         cout << "You pick a card (y/n)" << endl;
         char ans;
@@ -86,9 +95,9 @@ int main() {
             player->get_hand()->add_card(p);
         }
         else {
-            check_win;
+            check_win(player, dealer);
         }
-        hand_info(player,dealer);
+        hand_info(player);
         
         if (check_win(player, dealer) == 1 || check_win(player, dealer) == 2) {
             win = true;

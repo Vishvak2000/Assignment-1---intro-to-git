@@ -233,7 +233,7 @@ void  Hand::print_hand() {
     if (v.size() == 0) {
         cout << "Empty Hand!"; 
     }
-    for (auto i : v) {
+    for (auto i: v) {
         cout << i->get_english_rank() << " of " << i->get_english_suit() << endl;
     }
     cout << endl;
