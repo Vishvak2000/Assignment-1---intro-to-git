@@ -88,7 +88,7 @@ int main() {
             cout << "Dealer doesn't pick a card" << endl;
         } */
         p = new Card;
-        cout << "You pick a card (y/n)" << endl;
+        cout << "Will you pick a card (y/n)" << endl;
         char ans;
         cin >> ans;
         if (ans == 'y') {
