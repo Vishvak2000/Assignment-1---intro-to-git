@@ -169,6 +169,43 @@ string Card::get_english_rank() const {
     return rankName;
 }
 
+double Card::get_value() const {
+    double rankName = 0;
+    switch (rank) {
+    case AS:
+        rankName = 1;
+        break;
+    case DOS:
+        rankName = 2;
+        break;
+    case TRES:
+        rankName = 3;
+        break;
+    case CUATRO:
+        rankName = 4;
+        break;
+    case CINCO:
+        rankName = 5;
+        break;
+    case SEIS:
+        rankName = 6;
+        break;
+    case SIETE:
+        rankName = 7;
+        break;
+    case SOTA:
+        rankName = 0.5;
+        break;
+    case CABALLO:
+        rankName = 0.5;
+        break;
+    case REY:
+        rankName = 0.5;
+        break;
+    default: break;
+    }
+    return rankName;
+}
 
 
 // Assigns a numerical value to card based on rank.
@@ -196,17 +233,17 @@ void  Hand::print_hand() {
     if (v.size() == 0) {
         cout << "Empty Hand!"; 
     }
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i]->get_english_suit() << " of " << v[i]->get_english_rank() << endl;
+    for (auto i : v) {
+        cout << i->get_english_rank() << " of " << i->get_english_suit() << endl;
     }
     cout << endl;
 }
 double Hand::get_total() {
-    double total;
+    double totals = 0;
     for (auto i : v) {
-        total += i->get_rank();
+        totals += i->get();
     }
-    return total;
+    return totals;
 }
 void Hand::add_card(Card* p) {
     v.push_back(p);
@@ -218,8 +255,7 @@ void Hand::add_card(Card* p) {
       Player class
       ************************************************* */
       // Implemente the member functions of the Player class here.
-Player::Player(int _money): money(_money), wins(0), player_hand(new Hand()) {}
-Player::Player() : money(900), wins(0), player_hand(new Hand()) {}
+
 int Player::get_money() {
     return money;
 }

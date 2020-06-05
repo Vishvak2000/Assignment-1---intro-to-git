@@ -72,7 +72,7 @@ public:
 private:
     // You decide what fields you'll need...
     vector<Card*> v;
-    double total;
+    
     
 
 };
@@ -82,7 +82,8 @@ class Player {
 public:
     // Constructor. 
     //    Assigns initial amount of money
-    Player(string _name, int _money);
+    Player(int _money) : money(_money), wins(0), player_hand(new Hand()) {}
+    Player(): money(900), wins(0), player_hand(new Hand()) {}
 
     // You decide what functions you'll need...
     string get_name();
