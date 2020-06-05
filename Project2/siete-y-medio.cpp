@@ -27,18 +27,43 @@ void print_info(Player* player, Player* dealer) {
     cout << "Your total: " << dealer ->get_hand()->get_total()<< endl << endl;
     
 }
+void hand_info(Player* player, Player* dealer) {
 
+    
+    cout << "Your cards: " << endl;
+    player->get_hand()->print_hand();
+    cout << "Your total: " << player->get_hand()->get_total() << endl << endl;
+
+    cout << "Dealer's cards: " << endl;
+    dealer->get_hand()->print_hand();
+    cout << "Your total: " << dealer->get_hand()->get_total() << endl << endl;
+
+}
 // Stub for main
 int main() {
-    Player D;
+    bool win = false;
+    Player D();
     Player A(800);
-    for (int i = 0; i < 3; i++) {
-        Card* p = new Card;
-        D.get_hand()->add_card(p);
+    int bet;
+    cout << "Enter the bet: " << endl;
+    cin >> bet;
+    cout >> "__________________________________" << endl;
+
+    while (win = false;) {
+        if (D.get_hand()->get_total() <= 5.5) {
+            cout >> "Dealer picks a card:"
+                Card * p = new Card;
+            D.get_hand()->add_card(p);
+        }
+        p = new Card;
+        cout >> "Pick a card (y/n)";
+        char ans;
+        cin >> ans;
+        if (ans == 'y') {
+            A.get_hand()->add_card(p);
+        }
+        hand_info();
     }
-    p = new Card;
-    A.get_hand()->add_card(p)
-    D.get_hand()->print_hand();
+    
    
-    print_info();
 }

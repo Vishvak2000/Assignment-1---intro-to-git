@@ -87,6 +87,7 @@ public:
     // You decide what functions you'll need...
     string get_name();
     int get_money();
+    Hand* get_hand();
     void lose_money(int value);
     void add_money(int value);
     int get_wins();
