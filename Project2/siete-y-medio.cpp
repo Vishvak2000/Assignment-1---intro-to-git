@@ -37,6 +37,7 @@ void hand_info(Player* player, Player* dealer) {
     cout << "Dealer's cards: " << endl;
     dealer->get_hand()->print_hand();
     cout << "Your total: " << dealer->get_hand()->get_total() << endl << endl;
+    cout << " -- - - - - - - - - - - - - --" << endl;
 
 }
 

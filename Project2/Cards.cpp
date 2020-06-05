@@ -170,41 +170,41 @@ string Card::get_english_rank() const {
 }
 
 double Card::get_value() const {
-    double rankName = 0;
+    double cardValue = 0;
     switch (rank) {
     case AS:
-        rankName = 1;
+        cardValue = 1;
         break;
     case DOS:
-        rankName = 2;
+        cardValue = 2;
         break;
     case TRES:
-        rankName = 3;
+        cardValue = 3;
         break;
     case CUATRO:
-        rankName = 4;
+        cardValue = 4;
         break;
     case CINCO:
-        rankName = 5;
+        cardValue = 5;
         break;
     case SEIS:
-        rankName = 6;
+        cardValue = 6;
         break;
     case SIETE:
-        rankName = 7;
+        cardValue = 7;
         break;
     case SOTA:
-        rankName = 0.5;
+        cardValue = 0.5;
         break;
     case CABALLO:
-        rankName = 0.5;
+        cardValue = 0.5;
         break;
     case REY:
-        rankName = 0.5;
+        cardValue = 0.5;
         break;
     default: break;
     }
-    return rankName;
+    return cardValue;
 }
 
 
@@ -241,7 +241,7 @@ void  Hand::print_hand() {
 double Hand::get_total() {
     double totals = 0;
     for (auto i : v) {
-        totals += i->get();
+        totals += i->get_value();
     }
     return totals;
 }
