@@ -202,6 +202,10 @@ void  Hand::print_hand() {
     cout << endl;
 }
 double Hand::get_total() {
+    double total;
+    for (auto i : v) {
+        total += i->get_rank();
+    }
     return total;
 }
 void Hand::add_card(Card* p) {
